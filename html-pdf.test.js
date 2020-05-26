@@ -6,7 +6,7 @@ const html = fs.readFileSync('./assets/pdf.service.unit.test.html', 'utf8')
 // const wrapperStyle = 'transform: scale(0.53);'
 const wrapperStyle = 'font-size: 8px;'
 
-const finalHtml = `<div style="${wrapperStyle}">${html}</div>`
+const finalHtml = `<html><head><style>img {height: 50px !important; }</style></head><body><div style="${wrapperStyle}">${html}</div></body></html>`
 
 pdf.create(finalHtml, {
   format: 'A4',
